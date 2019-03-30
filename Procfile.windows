@@ -1,1 +1,1 @@
-web: python Palenoff_bot\Palenoff_bot.py runserver 0.0.0.0:5000
+web: python Palenoff-bot\palenoff-bot.py runserver 0.0.0.0:5000

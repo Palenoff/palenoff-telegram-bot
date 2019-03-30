@@ -22,9 +22,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="bot.py" />
     <Compile Include="commands.py" />
     <Compile Include="keyboards.py" />
+    <Compile Include="palenoff-bot.py" />
     <Compile Include="responses.py" />
     <Compile Include="__init__.py" />
   </ItemGroup>
