@@ -6,7 +6,7 @@ import logging
 import datetime
 import os
 
-bot = telebot.AsyncTeleBot("897726901:AAFqCm4JkPwdNdQ3uObBwhrh92gKAIe_NRY")#os.environ["TOKEN"])
+bot = telebot.AsyncTeleBot(os.environ["TOKEN"])
 logging.basicConfig(filename='messages.log')
 
 @bot.message_handler(commands=['start'])

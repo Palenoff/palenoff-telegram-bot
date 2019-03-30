@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.28307.271
+VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Palenoff_Bot", "Palenoff_Bot\Palenoff_Bot.pyproj", "{82991502-011D-4D39-B85D-5CB72143FD9F}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "palenoff-bot", "palenoff-bot\palenoff-bot.pyproj", "{6094DBE3-780A-4E84-9178-67ABFD6F0514}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +11,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{82991502-011D-4D39-B85D-5CB72143FD9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{82991502-011D-4D39-B85D-5CB72143FD9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6094DBE3-780A-4E84-9178-67ABFD6F0514}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6094DBE3-780A-4E84-9178-67ABFD6F0514}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {0713D55F-09DC-44C9-911E-75B8460D72AD}
+		SolutionGuid = {6E2A625F-BFFB-47D0-9E27-84B8DCA8D9F3}
 	EndGlobalSection
 EndGlobal

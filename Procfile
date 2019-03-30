@@ -1,1 +1,1 @@
-worker: python Bot/bot.py
+worker: python palenoff-bot/palenoff-bot.py
