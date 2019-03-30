@@ -1,1 +1,0 @@
-worker: python Palenoff-bot/palenoff-bot.py

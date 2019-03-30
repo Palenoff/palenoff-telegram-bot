@@ -18,6 +18,8 @@ languages_callback_button = InlineKeyboardButton(text="Языки", callback_dat
 personality_callback_button = InlineKeyboardButton(text="Личные качества", callback_data="личные качества")
 personal_qualities_markup.row(hobbies_callback_button,languages_callback_button)
 personal_qualities_markup.row(personality_callback_button)
+#personal_qualities_markup.row("","");
+#personal_qualities_markup.row("","Назад");
 
 skills_markup = InlineKeyboardMarkup()
 c_sharp_skills_button = InlineKeyboardButton(text="C#", callback_data="c#")

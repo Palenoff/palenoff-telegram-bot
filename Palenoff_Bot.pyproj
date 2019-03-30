@@ -2,16 +2,18 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{a2865812-5412-43f6-8d92-b647fc5bad7b}</ProjectGuid>
+    <ProjectGuid>82991502-011d-4d39-b85d-5cb72143fd9f</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>
-    </StartupFile>
+    <StartupFile>Palenoff_Bot.PY</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>Palenoff-bot</Name>
-    <RootNamespace>Palenoff-bot</RootNamespace>
+    <Name>Palenoff_Bot</Name>
+    <RootNamespace>Palenoff_Bot</RootNamespace>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
+    <Environment>TOKEN=897726901:AAFqCm4JkPwdNdQ3uObBwhrh92gKAIe_NRY</Environment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,11 +24,16 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="bot.py" />
-    <Compile Include="commands.py" />
-    <Compile Include="keyboards.py" />
-    <Compile Include="responses.py" />
-    <Compile Include="__init__.py" />
+    <Compile Include="commands.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="keyboards.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Palenoff_Bot.py" />
+    <Compile Include="responses.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

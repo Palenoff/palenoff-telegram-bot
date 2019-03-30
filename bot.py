@@ -6,7 +6,7 @@ import logging
 import datetime
 import os
 
-bot = telebot.AsyncTeleBot(os.environ["TOKEN"])
+bot = telebot.AsyncTeleBot("897726901:AAFqCm4JkPwdNdQ3uObBwhrh92gKAIe_NRY")#os.environ["TOKEN"])
 logging.basicConfig(filename='messages.log')
 
 @bot.message_handler(commands=['start'])
@@ -72,3 +72,5 @@ if __name__ == '__main__':
         print(ex.args)
         logging.critical(datetime.datetime.now())
         logging.critical(ex.args)
+
+#bot.polling(none_stop=True,interval=0)
