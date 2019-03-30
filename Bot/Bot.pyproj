@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>fb78abad-9040-443c-b023-19d892ef67f3</ProjectGuid>
+    <ProjectGuid>{a2865812-5412-43f6-8d92-b647fc5bad7b}</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <StartupFile>
     </StartupFile>
@@ -22,9 +22,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="bot.py" />
     <Compile Include="commands.py" />
     <Compile Include="keyboards.py" />
-    <Compile Include="palenoff-bot.py" />
     <Compile Include="responses.py" />
     <Compile Include="__init__.py" />
   </ItemGroup>

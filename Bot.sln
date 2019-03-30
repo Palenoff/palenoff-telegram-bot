@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Palenoff-bot", "Palenoff-bot\Palenoff-bot.pyproj", "{FB78ABAD-9040-443C-B023-19D892EF67F3}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Bot", "Bot\Bot.pyproj", "{A2865812-5412-43F6-8D92-B647FC5BAD7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{FB78ABAD-9040-443C-B023-19D892EF67F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FB78ABAD-9040-443C-B023-19D892EF67F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2865812-5412-43F6-8D92-B647FC5BAD7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2865812-5412-43F6-8D92-B647FC5BAD7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
