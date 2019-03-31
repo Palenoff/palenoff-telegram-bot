@@ -56,7 +56,9 @@ def handle_message(message):
 @bot.callback_query_handler(func=lambda call: True)
 def callback_inline(call):
     if call.message:
-        print("Инлайновый запрос:")
+        print("Инлайновый запрос")
+        print("Нажата кнопка: " + call.data)
+        print("Ответ: ")
         print(call.message.json)
         #logging.debug(datetime.datetime.now())
         #logging.debug(call.message.json)
