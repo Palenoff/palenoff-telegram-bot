@@ -1,2 +1,2 @@
 worker: python palenoff-bot\palenoff-bot.py runserver 0.0.0.0:5000
-stater:  python palenoff-bot\palenoff-bot.py runserver 0.0.0.0:5000
+launcher:  python palenoff-bot\palenoff-bot.py runserver 0.0.0.0:5000
