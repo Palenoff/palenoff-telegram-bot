@@ -58,7 +58,7 @@ def callback_inline(call):
     if call.message:
         print("Инлайновый запрос")
         print("Нажата кнопка: " + call.data)
-        print("Ответ: ")
+        print("Источник запроса: ")
         print(call.message.json)
         #logging.debug(datetime.datetime.now())
         #logging.debug(call.message.json)
