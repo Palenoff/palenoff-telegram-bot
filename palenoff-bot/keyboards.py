@@ -1,7 +1,7 @@
 from telebot.types import ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton
 start_markup = ReplyKeyboardMarkup(True)
 start_markup.row("Профессиональные качества","Персональные качества");
-start_markup.row("Помощь","О боте");
+start_markup.row("Помощь","Контакты","О боте");
 
 professional_qualities_markup = InlineKeyboardMarkup()
 education_callback_button = InlineKeyboardButton(text="Образование", callback_data="образование")

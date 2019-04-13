@@ -10,7 +10,10 @@ bot = telebot.AsyncTeleBot(os.environ["TOKEN"])
 
 @bot.message_handler(commands=['start'])
 def handle_start(message):
-	bot.send_sticker(message.chat.id, responses.stickers.bot_maxim["взгляд сквозь очки"])
+	try:
+		bot.send_sticker(message.chat.id, responses.stickers.bot_maxim["взгляд сквозь очки"])
+	except KeyError:
+		pass
 	time.sleep(0.5)
 	bot.send_message(message.chat.id, "Привет!\nЯ Бот Палёныч!\n" + 
                      "Кирилл решил доверить мне высокую миссию: " + 
@@ -20,20 +23,29 @@ def handle_start(message):
 
 @bot.message_handler(commands=['help'])
 def handle_help(message):
-	bot.send_sticker(message.chat.id, responses.responses["помощь"]["sticker"])
+	try:
+		bot.send_sticker(message.chat.id, responses.responses["помощь"]["sticker"])
+	except KeyError:
+		pass
 	time.sleep(0.5)
 	bot.send_message(message.chat.id,responses.responses["помощь"]["reply"])
 
 @bot.message_handler(commands=['about'])
 def handle_about(message):
-	bot.send_sticker(message.chat.id, responses.responses["о боте"]["sticker"])
+	try:
+		bot.send_sticker(message.chat.id, responses.responses["о боте"]["sticker"])
+	except KeyError:
+		pass
 	time.sleep(1)
 	bot.send_message(message.chat.id,responses.responses["о боте"]["reply"])
 
 def send_message(message, response):
 	bot.send_message(message.chat.id,response["reply"],reply_markup=response["markup"])
-	bot.send_sticker(message.chat.id,response["sticker"])
-
+	try:
+		bot.send_sticker(message.chat.id,response["sticker"])
+	except KeyError:
+		pass
+	
 def handle_command(message,messagetext):
     if messagetext == "помощь":
         handle_help(message)
@@ -66,10 +78,13 @@ def handle_message(message):
 			try:
 				response = responses.responses[key]
 				print("Ответ: " + response["reply"])
-				print("Стикер: " + response["sticker"])
 				bot.send_message(message.chat.id, response["reply"])
-				time.sleep(1)
-				bot.send_sticker(message.chat.id,response["sticker"])
+				try:
+					print("Стикер: " + response["sticker"])
+					time.sleep(1)
+					bot.send_sticker(message.chat.id,response["sticker"])
+				except KeyError:
+					pass
 			except KeyError:
 				response = key
 				print("Ответ: " + response)
