@@ -46,6 +46,7 @@ responses = {
 				"Junior Java developer:\n" +
 				"https://hh.ru/resume/b0c24052ff0651e9410039ed1f4762794e6e64",
 			"markup":None,
+			"sticker":stickers.charming_hr["начинаю хантить"]
 		},
     "образование":
         {

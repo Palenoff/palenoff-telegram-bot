@@ -55,3 +55,7 @@ stripped_cat = {
 thirty_eight_parrots = {
 		"прекрасно":"CAADAgADyQ4AAmHpagSu3Lk7nDQnqAI"
 	}
+
+charming_hr = {
+		"начинаю хантить":"CAADAgAD-wADFiV-Dm6UYoQDfbDdAg"
+	}
