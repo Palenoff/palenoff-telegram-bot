@@ -41,9 +41,7 @@ question_patterns = {
     }
 
 def parse_text(text):
-    for key in question_patterns:
-        if re.match(key,text):
-            try:
-                return responses.responses[question_patterns[key]]["reply"]
-            except KeyError:
-                return question_patterns[key]
+	for key in question_patterns:
+		if re.match(key,text):
+			return question_patterns[key]
+	return None

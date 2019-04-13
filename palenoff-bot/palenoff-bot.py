@@ -3,13 +3,16 @@ import responses
 import keyboards
 import commands
 import os
+import time
 
 bot = telebot.AsyncTeleBot(os.environ["TOKEN"])
 #logging.basicConfig(filename='messages.log')
 
 @bot.message_handler(commands=['start'])
 def handle_start(message):
-    bot.send_message(message.from_user.id, "Привет!\nЯ Бот Палёныч!\n" + 
+	bot.send_sticker(message.chat.id, responses.stickers.bot_maxim["взгляд сквозь очки"])
+	time.sleep(0.5)
+	bot.send_message(message.chat.id, "Привет!\nЯ Бот Палёныч!\n" + 
                      "Кирилл решил доверить мне высокую миссию: " + 
                      "представить его как добросовестного сотрудника и хорошего человека!\n" + 
                      "Что ж, надеюсь, я сумею оправдать Ваши ожидания😏\n" + 
@@ -17,14 +20,23 @@ def handle_start(message):
 
 @bot.message_handler(commands=['help'])
 def handle_help(message):
-    bot.send_message(message.from_user.id,responses.responses["помощь"]["reply"])
+	bot.send_sticker(message.chat.id, responses.responses["помощь"]["sticker"])
+	time.sleep(0.5)
+	bot.send_message(message.chat.id,responses.responses["помощь"]["reply"])
 
 @bot.message_handler(commands=['about'])
 def handle_about(message):
-    bot.send_message(message.from_user.id,responses.responses["о боте"]["reply"])
+	bot.send_sticker(message.chat.id, responses.responses["о боте"]["sticker"])
+	time.sleep(1)
+	bot.send_message(message.chat.id,responses.responses["о боте"]["reply"])
 
 def send_message(message, response):
-    bot.send_message(message.chat.id,response["reply"],reply_markup=response["markup"])
+	bot.send_message(message.chat.id,response["reply"],reply_markup=response["markup"])
+	try:
+		time.sleep(1)
+		bot.send_sticker(message.chat.id,response["sticker"])
+	except KeyError:
+		pass
 
 def handle_command(message,messagetext):
     if messagetext == "помощь":
@@ -39,23 +51,30 @@ def handle_command(message,messagetext):
 
 @bot.message_handler(content_types=['text'])
 def handle_message(message):
-    print("Зарос:")
-    print(message.json)
+	print("Зарос:")
+	print(message.json)
     #logging.debug(datetime.datetime.now())
     #logging.debug(message.json)
-    messagetext = message.text.lower()
-    if messagetext in responses.responses.keys():
-        print("Распознан как Команда: " + messagetext)
-        handle_command(message,messagetext)
-    else:
-        print("Распознан как Текст: " + messagetext)
-        reply = commands.parse_text(messagetext)
-        if reply is None:
-            reply = "На данный момент я не обладаю подобной информацией!\nНо не переживайте!\nВаш вопрос записан в лог, и скоро я узнаю ответ на него!"
-            print("Текст не распознан")
+	messagetext = message.text.lower()
+	if messagetext in responses.responses.keys():
+		print("Распознан как Команда: " + messagetext)
+		handle_command(message,messagetext)
+	else:
+		print("Распознан как Текст: " + messagetext)
+		key = commands.parse_text(messagetext)
+		if key is None:
+			bot.send_message(message.chat.id, "На данный момент я не обладаю подобной информацией!\nНо не переживайте!\nВаш вопрос записан в лог, и скоро я узнаю ответ на него!")
+			print("Текст не распознан")
             #logging.info(messagetext)
-        print("Ответ: " + reply)
-        bot.send_message(message.chat.id, reply)
+		else:
+			print("Ответ: " + responses.responses[key]["reply"])
+			print("Стикер: " + responses.responses[key]["sticker"])
+			bot.send_message(message.chat.id, responses.responses[key]["reply"])
+			try:
+				time.sleep(1)
+				bot.send_sticker(message.chat.id,responses.responses[key]["sticker"])
+			except KeyError:
+				pass
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_inline(call):
