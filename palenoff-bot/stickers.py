@@ -47,6 +47,11 @@ devrunner = {
 			"ты ж программист":"CAADAgADHgADtB8uBfgQg8t6qAFEAg",
 			"кажется понял как это работает":"CAADAgADPQADtB8uBZ0Jdo_wzJLRAg"
 		}
+
 stripped_cat = {
 		"hi":"CAADAgAD7QYAAvoLtgjYPnrK_n-aRAI"
+	}
+
+thirty_eight_parrots = {
+		"прекрасно":"CAADAgADyQ4AAmHpagSu3Lk7nDQnqAI"
 	}

@@ -173,8 +173,8 @@ responses = {
                 "Более подробно с примерами кода Кирилла на языке Python Вы можете ознакомиться здесь:\n" +
                 "https://github.com/Palenoff/MachineLearningScoresSystem/tree/master/MachineLearningScroesSystem/Core\n" +
                 "https://github.com/Palenoff/palenoff-telegram-bot",
-            "markup":keyboards.skills_markup
-            
+            "markup":keyboards.skills_markup,
+			"sticker":stickers.thirty_eight_parrots["прекрасно"]
         }
     }
 

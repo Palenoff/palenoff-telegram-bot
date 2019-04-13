@@ -32,11 +32,7 @@ def handle_about(message):
 
 def send_message(message, response):
 	bot.send_message(message.chat.id,response["reply"],reply_markup=response["markup"])
-	try:
-		time.sleep(1)
-		bot.send_sticker(message.chat.id,response["sticker"])
-	except KeyError:
-		pass
+	bot.send_sticker(message.chat.id,response["sticker"])
 
 def handle_command(message,messagetext):
     if messagetext == "помощь":
@@ -67,14 +63,17 @@ def handle_message(message):
 			print("Текст не распознан")
             #logging.info(messagetext)
 		else:
-			print("Ответ: " + responses.responses[key]["reply"])
-			print("Стикер: " + responses.responses[key]["sticker"])
-			bot.send_message(message.chat.id, responses.responses[key]["reply"])
 			try:
+				response = responses.responses[key]
+				print("Ответ: " + response["reply"])
+				print("Стикер: " + response["sticker"])
+				bot.send_message(message.chat.id, response["reply"])
 				time.sleep(1)
-				bot.send_sticker(message.chat.id,responses.responses[key]["sticker"])
+				bot.send_sticker(message.chat.id,response["sticker"])
 			except KeyError:
-				pass
+				response = key
+				print("Ответ: " + response)
+				bot.send_message(message.chat.id, response)
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_inline(call):
