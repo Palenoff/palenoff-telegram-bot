@@ -78,7 +78,7 @@ def handle_message(message):
 			try:
 				response = responses.responses[key]
 				print("Ответ: " + response["reply"])
-				bot.send_message(message.chat.id, response["reply"])
+				bot.send_message(message.chat.id, response["reply"], reply_markup=response["markup"])
 				try:
 					print("Стикер: " + response["sticker"])
 					time.sleep(1)
